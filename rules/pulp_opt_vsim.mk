@@ -18,6 +18,10 @@ ifdef vsim/dofile
 override CONFIG_OPT += **/vsim/dofile="$(vsim/dofile)"
 endif
 
+ifdef vsim/fast_preload
+override CONFIG_OPT += **/vsim/fast_preload="$(vsim/fast_preload)"
+endif
+
 ifdef vsim/model
 override CONFIG_OPT += **/vsim/model=$(vsim/model)
 endif
@@ -46,6 +50,7 @@ help_opt_vsim:
 	@echo "  vsim/script=<path       	Specify path to a script used to launch the platform>"
 	@echo "  vsim/recordwlf=1        	Activate Questasim WLF waveform trace recording in gap.wlf file"
 	@echo "  vsim/dofile=<filename>  	Specify one do file located in \$VSIM_PATH/waves to record specific traces during a simulation"
+	@echo "  vsim/fast_preload=1     	Enable fast preloading"
 	@echo "  vsim/enablecov=1        	Enable code coverage feature in Questasim"
 	@echo "  vsim/enableJtagTargetSync=1    Enable JTAG target synchronization with tb to authorize EOC checks via JTAG"
 	@echo ""
